@@ -10,8 +10,8 @@ __version__ = '0.1.2'
 PY3 = sys.version_info[0] >= 3
 
 
-def format_json(data):
-    return json.dumps(data, sort_keys=True, indent=4)
+def format_json(data, sort_keys=True):
+    return json.dumps(data, sort_keys=sort_keys, indent=4)
 
 
 def colorize_json(data):
@@ -27,8 +27,5 @@ def colorize_json(data):
     return colorful_json
 
 
-def print_json(data):
-    #colorful_json = highlight(unicode(format_json(data), 'UTF-8'),
-    #                          lexers.JsonLexer(),
-    #                          formatters.TerminalFormatter())
-    print(colorize_json(format_json(data)))
+def print_json(data, sort_keys=True):
+    print(colorize_json(format_json(data, sort_keys=sort_keys)))
