@@ -4,6 +4,7 @@
 *.pyc
 .DS_Store
 dist
+build
 .tox
 .coverage
 htmlcov
