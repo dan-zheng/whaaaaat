@@ -77,10 +77,10 @@ def prompt(questions, answers=None, **kwargs):
             print(e)
             raise ValueError('No question type \'%s\'' % type)
         except KeyboardInterrupt:
-            print('')
-            print('Cancelled by user')
-            print('')
-            return {}
+            # print('')
+            # print('Cancelled by user')
+            # return {}
+            exit()
     return answers
 
 

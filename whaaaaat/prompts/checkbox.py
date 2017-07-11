@@ -82,7 +82,7 @@ class InquirerControl(TokenListControl):
                     # Print disabled choice
                     tokens.append((T, '- %s (%s)' % (choice[0], choice[2])))
                 else:
-                    # Print 'o' fisheye
+                    # Print 'o' fish eye
                     if selected:
                         tokens.append((T.Selected, '\u25cf ', select_item))
                     else:
@@ -102,7 +102,7 @@ class InquirerControl(TokenListControl):
 
     def get_selected_values(self):
         # get values not labels
-        return [c[0] for c in self.choices if not isinstance(c, Separator) and
+        return [c[1] for c in self.choices if not isinstance(c, Separator) and
                 c[0] in self.selected_options]
 
     @property
