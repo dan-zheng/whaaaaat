@@ -74,21 +74,23 @@ class InquirerControl(TokenListControl):
                         self.selected_options.append(line)
 
                 if pointed_at:
-                    tokens.append((T.Pointer, ' \u276f', select_item))  # ' >'
+                    # Print '>' prompt
+                    tokens.append((T.Pointer, '\u276f ', select_item))
                 else:
                     tokens.append((T, '  ', select_item))
-                # 'o ' - FISHEYE
-                if choice[2]:  # disabled
+                if choice[2]:
+                    # Print disabled choice
                     tokens.append((T, '- %s (%s)' % (choice[0], choice[2])))
                 else:
+                    # Print 'o' fisheye
                     if selected:
                         tokens.append((T.Selected, '\u25cf ', select_item))
                     else:
                         tokens.append((T, '\u25cb ', select_item))
-    
+
                     if pointed_at:
                         tokens.append((Token.SetCursorPosition, ''))
-    
+
                     tokens.append((T, line, select_item))
                 tokens.append((T, '\n'))
 
